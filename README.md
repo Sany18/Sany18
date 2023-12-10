@@ -1,2 +1,2 @@
-- 👋 Hi, I’m @Sany18
-- 👀 I’m interested in JS
+Web sketches https://alter-space.biz.ua/
+UA blog https://hoxzy.blogspot.com/
