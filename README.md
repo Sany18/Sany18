@@ -3,7 +3,7 @@
 ----
 *[My CV](https://sany18.github.io/cv/)* Explore my professional journey and skills.
 ----
-*[Alter Space](https://alter-space.biz.ua/)* Web sketches, where creativity meets design.
+*[Alter Space](https://alter-space.biz.ua/)* Web sketches, where my creativity was.
 ----
-*[Hoxzy Blog](https://hoxzy.blogspot.com/)* Tech thoughts and musings in pixel-perfect form.
+*[Hoxzy Blog](https://hoxzy.blogspot.com/)* Tech thoughts and musings in free form.
 ----
