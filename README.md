@@ -25,5 +25,3 @@
   </div>
 
 </div>
-
-<button onclick="alert('Hello!')">Click Me</button>
