@@ -1,27 +1,26 @@
-```
-sany18
-──────
-```
+<div align="center">
 
-**[note keeper](https://sany18.github.io/note-keeper/)**
-secure notes, powered by google drive
+<pre>
+╔═════════════════════════════════════════════════════════════╗
+║             _____  ___   _   ___   ____   _____             ║
+║            /  ___|/ _ \ | \ | \ \ / /  | |  _  |            ║
+║            \ `--./ /_\ \|  \| |\ V /`| |  \ V /             ║
+║             `--. \  _  || . ` | \ /  | |  / _ \             ║
+║            /\__/ / | | || |\  | | | _| |_| |_| |            ║
+║            \____/\_| |_/\_| \_/ \_/ \___/\_____/            ║
+║                                                             ║
+║            hoxz :: frontend engineer :: est. 2018           ║
+╠═════════════════════════════════════════════════════════════╣
+║                                                             ║
+║ [1] <a href="https://sany18.github.io/note-keeper/">note keeper</a> ..... secure notes, powered by google drive ║
+║ [2] <a href="https://sany18.github.io/cv/">my cv</a> ........... professional journey & skills         ║
+║ [3] <a href="https://alter-space.biz.ua/">alter space</a> ..... web sketches, early creative work     ║
+║ [4] <a href="https://hoxzy.blogspot.com/">hoxzy blog</a> ...... tech thoughts, free form              ║
+║ [5] <a href="https://donatello.to/hoxz">support</a> ......... buy me a coffee                       ║
+║                                                             ║
+╠═════════════════════════════════════════════════════════════╣
+║                      github.com/Sany18                      ║
+╚═════════════════════════════════════════════════════════════╝
+</pre>
 
----
-
-**[my cv](https://sany18.github.io/cv/)**
-professional journey & skills
-
----
-
-**[alter space](https://alter-space.biz.ua/)**
-web sketches, early creative work
-
----
-
-**[hoxzy blog](https://hoxzy.blogspot.com/)**
-tech thoughts, free form
-
----
-
-**[support](https://donatello.to/hoxz)**
-buy me a coffee
+</div>
