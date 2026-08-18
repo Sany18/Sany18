@@ -27,6 +27,12 @@
 </div>
 
 
+<br>
+
+<div align="center">
+  <img src="cube.svg" alt="3D rotating cube" width="400" height="400">
+</div>
+
 ---
 
 ## HTML Test
@@ -73,4 +79,9 @@
   <img src="css-demo.svg" style="width: 100%;" alt="CSS animation demo">
 </div>
 
-> If you see **animated icons** and **hover effects** above, SVG+CSS works. If it's a broken image — GitHub stripped it.
+> **What works in SVG `<img>`:**
+> - `@keyframes` animations — ✅ (cube rotation, glow pulse)
+> - 3D transforms (`perspective`, `rotateX/Y/Z`, `preserve-3d`) — ✅
+> - `:hover` pseudo-class — ❌
+> - `prefers-color-scheme` media query — ✅
+> - JS inside SVG — ❌
