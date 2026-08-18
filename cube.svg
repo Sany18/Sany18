@@ -3,10 +3,10 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         :root {
-          --size: 280px;
-          --half: 140px;
+          --size: 200px;
+          --half: 100px;
           --speed: 8s;
-          --perspective: 1200px;
+          --perspective: 900px;
           --border: 2px;
           --glow: 20px;
           --scene-w: 100%;
