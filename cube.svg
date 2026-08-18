@@ -9,7 +9,6 @@
           justify-content: center;
           align-items: center;
           min-height: 100vh;
-          background: #0a0a0a;
           overflow: hidden;
         }
 
@@ -129,7 +128,7 @@
         }
       </style>
 
-      <body>
+      <body title="HOXZ 3D Cube">
         <div class="scanlines"></div>
         <div class="grid"></div>
         <div class="scene">
