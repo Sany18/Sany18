@@ -1,3 +1,3 @@
 <div align="center">
-  <img src="cube.svg" alt="3D rotating cube" width="100%">
+  <img src="synthwave.svg" alt="synthwave sunset" width="100%">
 </div>
