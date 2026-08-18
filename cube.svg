@@ -2,38 +2,57 @@
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
+        :root {
+          --size: 280px;
+          --half: 140px;
+          --speed: 8s;
+          --perspective: 900px;
+          --border: 2px;
+          --glow: 20px;
+
+          --c-front:  #00ffff;
+          --c-back:   #ff00ff;
+          --c-right:  #ffff00;
+          --c-left:   #00ff00;
+          --c-top:    #ff6600;
+          --c-bottom: #ff0066;
+
+          --font-size: 48px;
+          --letter-spacing: 6px;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
           display: flex;
           justify-content: center;
           align-items: center;
-          min-height: 500px;
+          min-height: 350px;
           overflow: hidden;
         }
 
         .scene {
           width: 100%;
-          height: 500px;
-          perspective: 900px;
+          height: 350px;
+          perspective: var(--perspective);
           display: flex;
           justify-content: center;
           align-items: center;
         }
 
         .cube {
-          width: 320px;
-          height: 320px;
+          width: var(--size);
+          height: var(--size);
           position: relative;
           transform-style: preserve-3d;
-          animation: rotate 8s linear infinite;
+          animation: rotate var(--speed) linear infinite;
         }
 
         .face {
           position: absolute;
-          width: 320px;
-          height: 320px;
-          border: 2px solid;
+          width: var(--size);
+          height: var(--size);
+          border: var(--border) solid;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -41,58 +60,54 @@
           backface-visibility: visible;
         }
 
-        .f-front  {
-          border-color: #00ffff;
+        .f-front {
+          border-color: var(--c-front);
           background: rgba(0, 255, 255, 0.08);
-          box-shadow: inset 0 0 40px rgba(0, 255, 255, 0.1), 0 0 20px rgba(0, 255, 255, 0.3);
-          transform: translateZ(160px);
+          box-shadow: inset 0 0 40px rgba(0, 255, 255, 0.1), 0 0 var(--glow) rgba(0, 255, 255, 0.3);
+          transform: translateZ(var(--half));
         }
         .f-back {
-          border-color: #ff00ff;
+          border-color: var(--c-back);
           background: rgba(255, 0, 255, 0.08);
-          box-shadow: inset 0 0 40px rgba(255, 0, 255, 0.1), 0 0 20px rgba(255, 0, 255, 0.3);
-          transform: rotateY(180deg) translateZ(160px);
+          box-shadow: inset 0 0 40px rgba(255, 0, 255, 0.1), 0 0 var(--glow) rgba(255, 0, 255, 0.3);
+          transform: rotateY(180deg) translateZ(var(--half));
         }
         .f-right {
-          border-color: #ffff00;
+          border-color: var(--c-right);
           background: rgba(255, 255, 0, 0.08);
-          box-shadow: inset 0 0 40px rgba(255, 255, 0, 0.1), 0 0 20px rgba(255, 255, 0, 0.3);
-          transform: rotateY(90deg) translateZ(160px);
+          box-shadow: inset 0 0 40px rgba(255, 255, 0, 0.1), 0 0 var(--glow) rgba(255, 255, 0, 0.3);
+          transform: rotateY(90deg) translateZ(var(--half));
         }
         .f-left {
-          border-color: #00ff00;
+          border-color: var(--c-left);
           background: rgba(0, 255, 0, 0.08);
-          box-shadow: inset 0 0 40px rgba(0, 255, 0, 0.1), 0 0 20px rgba(0, 255, 0, 0.3);
-          transform: rotateY(-90deg) translateZ(160px);
+          box-shadow: inset 0 0 40px rgba(0, 255, 0, 0.1), 0 0 var(--glow) rgba(0, 255, 0, 0.3);
+          transform: rotateY(-90deg) translateZ(var(--half));
         }
         .f-top {
-          border-color: #ff6600;
+          border-color: var(--c-top);
           background: rgba(255, 102, 0, 0.08);
-          box-shadow: inset 0 0 40px rgba(255, 102, 0, 0.1), 0 0 20px rgba(255, 102, 0, 0.3);
-          transform: rotateX(90deg) translateZ(160px);
+          box-shadow: inset 0 0 40px rgba(255, 102, 0, 0.1), 0 0 var(--glow) rgba(255, 102, 0, 0.3);
+          transform: rotateX(90deg) translateZ(var(--half));
         }
         .f-bottom {
-          border-color: #ff0066;
+          border-color: var(--c-bottom);
           background: rgba(255, 0, 102, 0.08);
-          box-shadow: inset 0 0 40px rgba(255, 0, 102, 0.1), 0 0 20px rgba(255, 0, 102, 0.3);
-          transform: rotateX(-90deg) translateZ(160px);
+          box-shadow: inset 0 0 40px rgba(255, 0, 102, 0.1), 0 0 var(--glow) rgba(255, 0, 102, 0.3);
+          transform: rotateX(-90deg) translateZ(var(--half));
         }
 
         .hoxz {
-          font-size: 52px;
+          font-size: var(--font-size);
           font-weight: 900;
-          letter-spacing: 6px;
-          color: #00ffff;
-          text-shadow: 0 0 10px #00ffff, 0 0 30px #00ffff, 0 0 60px rgba(0, 255, 255, 0.4);
+          letter-spacing: var(--letter-spacing);
+          color: var(--c-front);
+          text-shadow: 0 0 10px var(--c-front), 0 0 30px var(--c-front), 0 0 60px rgba(0, 255, 255, 0.4);
         }
 
         @keyframes rotate {
-          0%   { transform: rotateX(0deg)    rotateY(0deg)    rotateZ(0deg); }
-          100% { transform: rotateX(360deg)  rotateY(360deg)  rotateZ(360deg); }
-        }
-
-        @media (prefers-color-scheme: light) {
-          body { background: #f0f0f0; }
+          0%   { transform: rotateX(0deg)   rotateY(0deg)   rotateZ(0deg); }
+          100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
         }
       </style>
 
