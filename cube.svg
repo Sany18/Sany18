@@ -104,19 +104,6 @@
           z-index: 10;
         }
 
-        /* grid floor */
-        .grid {
-          position: fixed;
-          bottom: 0; left: 0;
-          width: 100%; height: 40%;
-          background:
-            linear-gradient(90deg, rgba(0, 255, 255, 0.06) 1px, transparent 1px),
-            linear-gradient(0deg, rgba(0, 255, 255, 0.06) 1px, transparent 1px);
-          background-size: 40px 40px;
-          transform: perspective(300px) rotateX(60deg);
-          transform-origin: bottom;
-        }
-
         @media (prefers-color-scheme: light) {
           body { background: #f0f0f0; }
           .scanlines { display: none; }
@@ -130,7 +117,6 @@
 
       <body title="HOXZ 3D Cube">
         <div class="scanlines"></div>
-        <div class="grid"></div>
         <div class="scene">
           <div class="cube">
             <div class="face f-front"><span class="hoxz">HOXZ</span></div>
