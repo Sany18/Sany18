@@ -88,22 +88,6 @@
           100% { transform: rotateX(360deg)  rotateY(360deg)  rotateZ(360deg); }
         }
 
-        /* scanlines overlay */
-        .scanlines {
-          position: fixed;
-          top: 0; left: 0;
-          width: 100%; height: 100%;
-          background: repeating-linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.15) 0px,
-            rgba(0, 0, 0, 0.15) 1px,
-            transparent 1px,
-            transparent 3px
-          );
-          pointer-events: none;
-          z-index: 10;
-        }
-
         @media (prefers-color-scheme: light) {
           body { background: #f0f0f0; }
           .scanlines { display: none; }
@@ -116,7 +100,6 @@
       </style>
 
       <body title="HOXZ 3D Cube">
-        <div class="scanlines"></div>
         <div class="scene">
           <div class="cube">
             <div class="face f-front"><span class="hoxz">HOXZ</span></div>
