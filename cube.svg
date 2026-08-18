@@ -10,13 +10,12 @@
           align-items: center;
           min-height: 100vh;
           background: #0d1117;
-          perspective: 800px;
           overflow: hidden;
         }
 
         .scene {
-          width: 180px;
-          height: 180px;
+          width: 200px;
+          height: 200px;
           perspective: 800px;
         }
 
@@ -25,91 +24,107 @@
           height: 100%;
           position: relative;
           transform-style: preserve-3d;
-          animation: rotate 8s linear infinite;
+          animation: rotate 12s linear infinite;
         }
 
         .face {
           position: absolute;
-          width: 180px;
-          height: 180px;
-          border: 2px solid rgba(88, 166, 255, 0.5);
-          border-radius: 8px;
+          width: 200px;
+          height: 200px;
+          border: 2px solid rgba(88, 166, 255, 0.4);
+          border-radius: 10px;
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
-          font-size: 48px;
+          gap: 6px;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
           backface-visibility: visible;
+          text-decoration: none;
         }
 
-        /* front  */
-        .front  {
-          background: rgba(31, 111, 235, 0.25);
-          transform: translateZ(90px);
-        }
-        /* back */
-        .back {
-          background: rgba(137, 87, 229, 0.25);
-          transform: rotateY(180deg) translateZ(90px);
-        }
-        /* right */
-        .right {
-          background: rgba(35, 134, 54, 0.25);
-          transform: rotateY(90deg) translateZ(90px);
-        }
-        /* left */
-        .left {
-          background: rgba(218, 75, 75, 0.25);
-          transform: rotateY(-90deg) translateZ(90px);
-        }
-        /* top */
-        .top {
-          background: rgba(219, 171, 9, 0.25);
-          transform: rotateX(90deg) translateZ(90px);
-        }
-        /* bottom */
-        .bottom {
-          background: rgba(56, 139, 253, 0.25);
-          transform: rotateX(-90deg) translateZ(90px);
+        .face .num {
+          font-size: 14px;
+          color: rgba(88, 166, 255, 0.6);
+          font-weight: 600;
+          letter-spacing: 1px;
         }
 
-        /* spin on X + Y */
+        .face .name {
+          font-size: 15px;
+          font-weight: 700;
+          color: #e6edf3;
+          letter-spacing: 0.5px;
+        }
+
+        .face .desc {
+          font-size: 9px;
+          color: #8b949e;
+          text-align: center;
+          max-width: 140px;
+          line-height: 1.3;
+        }
+
+        .face-front  {
+          background: rgba(31, 111, 235, 0.2);
+          transform: translateZ(100px);
+        }
+        .face-back {
+          background: rgba(137, 87, 229, 0.2);
+          transform: rotateY(180deg) translateZ(100px);
+        }
+        .face-right {
+          background: rgba(35, 134, 54, 0.2);
+          transform: rotateY(90deg) translateZ(100px);
+        }
+        .face-left {
+          background: rgba(218, 75, 75, 0.2);
+          transform: rotateY(-90deg) translateZ(100px);
+        }
+        .face-top {
+          background: rgba(219, 171, 9, 0.2);
+          transform: rotateX(90deg) translateZ(100px);
+        }
+        .face-bottom {
+          background: rgba(56, 139, 253, 0.2);
+          transform: rotateX(-90deg) translateZ(100px);
+        }
+
         @keyframes rotate {
-          0%   { transform: rotateX(0deg)   rotateY(0deg); }
-          100% { transform: rotateX(360deg) rotateY(360deg); }
+          0%   { transform: rotateX(-15deg) rotateY(0deg); }
+          100% { transform: rotateX(-15deg) rotateY(360deg); }
         }
 
-        /* subtle glow pulse */
         @keyframes glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(88, 166, 255, 0.3); }
-          50%      { box-shadow: 0 0 40px rgba(88, 166, 255, 0.6); }
+          0%, 100% { box-shadow: 0 0 15px rgba(88, 166, 255, 0.2); }
+          50%      { box-shadow: 0 0 30px rgba(88, 166, 255, 0.5); }
         }
 
-        .face {
-          animation: glow 3s ease-in-out infinite;
-        }
+        .face { animation: glow 4s ease-in-out infinite; }
 
         .label {
           position: absolute;
-          bottom: -40px;
+          bottom: -36px;
           width: 100%;
           text-align: center;
           color: #8b949e;
-          font-size: 12px;
+          font-size: 11px;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-          letter-spacing: 1px;
+          letter-spacing: 2px;
         }
 
         @media (prefers-color-scheme: light) {
           body { background: #ffffff; }
-          .face { border-color: rgba(9, 105, 218, 0.5); }
-          .front  { background: rgba(9, 105, 218, 0.2); }
-          .back   { background: rgba(137, 87, 229, 0.2); }
-          .right  { background: rgba(35, 134, 54, 0.2); }
-          .left   { background: rgba(207, 34, 46, 0.2); }
-          .top    { background: rgba(191, 135, 0, 0.2); }
-          .bottom { background: rgba(9, 105, 218, 0.2); }
-          .label  { color: #57606a; }
+          .face { border-color: rgba(9, 105, 218, 0.3); }
+          .face-front  { background: rgba(9, 105, 218, 0.15); }
+          .face-back   { background: rgba(137, 87, 229, 0.15); }
+          .face-right  { background: rgba(35, 134, 54, 0.15); }
+          .face-left   { background: rgba(207, 34, 46, 0.15); }
+          .face-top    { background: rgba(191, 135, 0, 0.15); }
+          .face-bottom { background: rgba(9, 105, 218, 0.15); }
+          .face .name  { color: #1f2328; }
+          .face .desc  { color: #57606a; }
+          .label       { color: #57606a; }
         }
       </style>
 
@@ -117,12 +132,36 @@
         <div style="position: relative;">
           <div class="scene">
             <div class="cube">
-              <div class="face front">H</div>
-              <div class="face back">X</div>
-              <div class="face right">Z</div>
-              <div class="face left">Y</div>
-              <div class="face top">2</div>
-              <div class="face bottom">1</div>
+              <a class="face face-front" href="https://sany18.github.io/note-keeper/">
+                <span class="num">[1]</span>
+                <span class="name">note keeper</span>
+                <span class="desc">secure notes, powered by google drive</span>
+              </a>
+              <a class="face face-back" href="https://sany18.github.io/cv/">
+                <span class="num">[2]</span>
+                <span class="name">my cv</span>
+                <span class="desc">professional journey &amp; skills</span>
+              </a>
+              <a class="face face-right" href="https://alter-space.biz.ua/gta-vc/">
+                <span class="num">[3]</span>
+                <span class="name">GTA VC</span>
+                <span class="desc">old good GTA Vice City web port</span>
+              </a>
+              <a class="face face-left" href="https://alter-space.biz.ua/">
+                <span class="num">[4]</span>
+                <span class="name">alter space</span>
+                <span class="desc">web sketches, early creative work</span>
+              </a>
+              <a class="face face-top" href="https://hoxzy.blogspot.com/">
+                <span class="num">[5]</span>
+                <span class="name">hoxzy blog</span>
+                <span class="desc">tech thoughts, free form</span>
+              </a>
+              <a class="face face-bottom" href="https://donatello.to/hoxz">
+                <span class="num">[6]</span>
+                <span class="name">support</span>
+                <span class="desc">buy me a coffee</span>
+              </a>
             </div>
           </div>
           <div class="label">SANY18</div>
