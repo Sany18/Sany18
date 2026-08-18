@@ -6,9 +6,11 @@
           --size: 280px;
           --half: 140px;
           --speed: 8s;
-          --perspective: 900px;
+          --perspective: 1200px;
           --border: 2px;
           --glow: 20px;
+          --scene-w: 100%;
+          --scene-h: 350px;
 
           --c-front:  #00ffff;
           --c-back:   #ff00ff;
@@ -27,13 +29,13 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          min-height: 350px;
+          min-height: var(--scene-h);
           overflow: hidden;
         }
 
         .scene {
-          width: 100%;
-          height: 350px;
+          width: var(--scene-w);
+          height: var(--scene-h);
           perspective: var(--perspective);
           display: flex;
           justify-content: center;
