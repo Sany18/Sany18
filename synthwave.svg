@@ -36,28 +36,22 @@
           background: linear-gradient(to bottom, var(--sky-top) 0%, var(--sky-bottom) 100%);
         }
 
-        .sun-wrap {
+        .sun {
           position: absolute;
           left: 52px; top: 35px;
           width: 56px; height: 56px;
           border-radius: 50%;
-          overflow: hidden;
-        }
-        .sun {
-          position: absolute;
-          inset: 0;
           background: var(--sun);
+          --cuts: black 0, black 5px, transparent 5px, transparent 13px,
+            black 13px, black 17px, transparent 17px, transparent 22px,
+            black 22px, black 27px, transparent 27px, transparent 30px,
+            black 30px, black 34px, transparent 34px, transparent 36px,
+            black 36px, black 40px, transparent 40px, transparent 41px,
+            black 41px, black 45px, transparent 45px, transparent 46px,
+            black 46px, black 56px;
+          -webkit-mask-image: linear-gradient(to bottom, var(--cuts));
+          mask-image: linear-gradient(to bottom, var(--cuts));
         }
-        .cut {
-          position: absolute;
-          left: 0; width: 56px;
-        }
-        .cut.c1 { top: 5px; height: 8px; background: #8d3918; }
-        .cut.c2 { top: 17px; height: 5px; background: #a24711; }
-        .cut.c3 { top: 27px; height: 3px; background: #b4520a; }
-        .cut.c4 { top: 34px; height: 2px; background: #c15b06; }
-        .cut.c5 { top: 40px; height: 1px; background: #cc6202; }
-        .cut.c6 { top: 45px; height: 1px; background: #d16500; }
 
         .mtn-shape { position: absolute; inset: 0; }
 
@@ -129,7 +123,7 @@
           position: absolute;
           left: 0; width: 160px; height: 3px;
           animation-duration: .5s;
-          animation-timing-function: ease-in;
+          animation-timing-function: linear;
           animation-iteration-count: infinite;
         }
         .hwrap .hline.glow { height: 3px; top: 0; }
@@ -147,15 +141,7 @@
       <body>
         <div class="scene">
           <div class="sky"></div>
-          <div class="sun-wrap">
-            <div class="sun"></div>
-            <div class="cut c1"></div>
-            <div class="cut c2"></div>
-            <div class="cut c3"></div>
-            <div class="cut c4"></div>
-            <div class="cut c5"></div>
-            <div class="cut c6"></div>
-          </div>
+          <div class="sun"></div>
 
           <div class="mtn-shape" style="background:var(--mtn-shadow); clip-path:polygon(-10px 78px, 15px 66px, 40px 78px);"></div>
           <div class="mtn-shape" style="background:var(--mtn); clip-path:polygon(15px 78px, 30px 60px, 45px 78px);"></div>
