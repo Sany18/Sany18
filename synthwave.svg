@@ -16,6 +16,8 @@
           --light-dim: #a9702f;
           --beacon: #ff2020;
           --ground: rgba(8, 0, 12, 0.6);
+          --plane: #3d1428;
+          --contrail: #ffe9d1;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,6 +53,45 @@
             black 46px, black 56px;
           -webkit-mask-image: linear-gradient(to bottom, var(--cuts));
           mask-image: linear-gradient(to bottom, var(--cuts));
+        }
+
+        .plane-anchor {
+          position: absolute;
+          left: -12px; top: 20px;
+          width: 1px; height: 1px;
+          animation: plane-fly 18s linear infinite;
+        }
+        @keyframes plane-fly {
+          0% { transform: translate(0, 0); }
+          30% { transform: translate(0, 0); }
+          70% { transform: translate(210px, -11.41px); }
+          100% { transform: translate(210px, -11.41px); }
+        }
+        .plane-heading {
+          position: absolute;
+          left: -6px; top: -4px;
+          width: 12px; height: 8px;
+          transform: rotate(-3.11deg);
+        }
+        .plane-body { position: absolute; background: var(--plane); }
+        .plane-body.fuselage { inset: 0; clip-path: polygon(9px 4px, 3.5px 5px, 3.5px 3px); }
+        .plane-body.wing { inset: 0; clip-path: polygon(6.5px 4px, 4px 7px, 4px 1px); }
+        .plane-trail {
+          position: absolute;
+          left: -22.5px; top: 3.3px;
+          width: 26px; height: 1.4px;
+          background: linear-gradient(to left, rgba(255, 233, 209, 0.55), transparent);
+        }
+        .nav-light {
+          position: absolute;
+          left: 4px; top: 7px;
+          width: 1px; height: 1px;
+          background: var(--beacon);
+          animation: nav-blink .7s steps(1) infinite;
+        }
+        @keyframes nav-blink {
+          0%, 55% { opacity: 1; }
+          56%, 100% { opacity: 0; }
         }
 
         .mtn-shape { position: absolute; inset: 0; }
@@ -142,6 +183,15 @@
         <div class="scene">
           <div class="sky"></div>
           <div class="sun"></div>
+
+          <div class="plane-anchor">
+            <div class="plane-heading">
+              <div class="plane-trail"></div>
+              <div class="plane-body wing"></div>
+              <div class="plane-body fuselage"></div>
+              <div class="nav-light"></div>
+            </div>
+          </div>
 
           <div class="mtn-shape" style="background:var(--mtn-shadow); clip-path:polygon(-10px 78px, 15px 66px, 40px 78px);"></div>
           <div class="mtn-shape" style="background:var(--mtn); clip-path:polygon(15px 78px, 30px 60px, 45px 78px);"></div>
